@@ -4,10 +4,11 @@ import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight, ShieldCheck, Database, Lock } from "lucide-react";
 import { motion } from "framer-motion";
+import { Typewriter } from "@/components/ui/Typewriter";
 
 export function Hero() {
     return (
-        <Section id="hero" className="min-h-screen flex items-center justify-center pt-32 pb-20">
+        <Section id="hero" className="min-h-screen flex items-center justify-center pt-24 pb-12 md:pt-32 md:pb-20">
             {/* Background Elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }}></div>
@@ -23,14 +24,19 @@ export function Hero() {
                     className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/20 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6"
                 >
                     <ShieldCheck className="w-4 h-4" />
-                    <span>Cybersecurity Specialist & Full-Stack Developer</span>
+                    <Typewriter
+                        text={["Cybersecurity Specialist", "Full-Stack Developer", "Digital Forensics Expert"]}
+                        speed={0.1}
+                        className="font-mono"
+                        cursorClassName="bg-blue-500"
+                    />
                 </motion.div>
 
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight"
+                    className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight"
                 >
                     Secure Systems. <br />
                     <span className="text-gradient-primary">Scalable Architecture.</span>

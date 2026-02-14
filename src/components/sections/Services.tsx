@@ -2,41 +2,8 @@
 
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
-import { Shield, Code, Server, Smartphone, Zap, Search } from "lucide-react";
 import { motion } from "framer-motion";
-
-const services = [
-    {
-        icon: <Code className="w-8 h-8 text-blue-500" />,
-        title: "Secure Web Development",
-        description: "Building responsive, modern web applications with security best practices baked in from line one."
-    },
-    {
-        icon: <Server className="w-8 h-8 text-blue-500" />,
-        title: "API & Backend Engineering",
-        description: "Designing scalable, RESTful and GraphQL APIs using Node.js, Django, and FastAPI."
-    },
-    {
-        icon: <Shield className="w-8 h-8 text-blue-500" />,
-        title: "Security Hardening",
-        description: "Vulnerability assessments, secure coding audits, and implementation of robust auth systems."
-    },
-    {
-        icon: <Zap className="w-8 h-8 text-blue-500" />,
-        title: "Performance Optimization",
-        description: "Speeding up load times, optimizing database queries, and ensuring SEO readiness."
-    },
-    {
-        icon: <Smartphone className="w-8 h-8 text-blue-500" />,
-        title: "SaaS & MVP Architecture",
-        description: "rapidly prototyping and deploying scalable MVPs for startups and businesses."
-    },
-    {
-        icon: <Search className="w-8 h-8 text-blue-500" />,
-        title: "Digital Forensics (Consulting)",
-        description: "Leveraging forensic knowledge to investigate and prevent digital threats."
-    },
-];
+import { services } from "@/data/portfolio";
 
 export function Services() {
     return (
@@ -59,7 +26,7 @@ export function Services() {
                     >
                         <Card className="h-full hover:bg-slate-900/80 transition-colors group">
                             <div className="mb-4 p-3 bg-blue-500/10 rounded-lg w-fit group-hover:bg-blue-500/20 transition-colors">
-                                {service.icon}
+                                <service.icon className="w-8 h-8 text-blue-500" />
                             </div>
                             <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
                             <p className="text-slate-400 text-sm leading-relaxed">

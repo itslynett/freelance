@@ -2,25 +2,7 @@
 
 import { Section } from "@/components/ui/Section";
 import { motion } from "framer-motion";
-
-const techCategories = [
-    {
-        name: "Frontend",
-        skills: ["React", "Next.js", "Vue.js", "TypeScript", "Tailwind CSS", "Redux", "Framer Motion"]
-    },
-    {
-        name: "Backend",
-        skills: ["Node.js", "Express", "Django", "FastAPI", "Flask", "Python", "REST APIs"]
-    },
-    {
-        name: "Database",
-        skills: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Prisma"]
-    },
-    {
-        name: "Security & DevOps",
-        skills: ["Sophos", "Octopus", "OWASP", "Docker", "Git", "Linux", "Penetration Testing"]
-    }
-];
+import { techStack } from "@/data/portfolio";
 
 export function TechStack() {
     return (
@@ -31,7 +13,7 @@ export function TechStack() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {techCategories.map((category, index) => (
+                {techStack.map((category, index) => (
                     <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 20 }}

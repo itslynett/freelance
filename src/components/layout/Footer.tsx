@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Shield, Github, Linkedin, Twitter } from "lucide-react";
+import { personalInfo } from "@/data/portfolio";
 
 export function Footer() {
     return (
@@ -16,13 +17,13 @@ export function Footer() {
                     </div>
 
                     <div className="flex items-center gap-6">
-                        <Link href="https://github.com/lynettmaina" target="_blank" className="text-slate-400 hover:text-white transition-colors">
+                        <Link href={personalInfo.socials.github} target="_blank" className="text-slate-400 hover:text-white transition-colors">
                             <Github className="h-5 w-5" />
                         </Link>
-                        <Link href="https://linkedin.com/in/lynettmaina" target="_blank" className="text-slate-400 hover:text-white transition-colors">
+                        <Link href={personalInfo.socials.linkedin} target="_blank" className="text-slate-400 hover:text-white transition-colors">
                             <Linkedin className="h-5 w-5" />
                         </Link>
-                        <Link href="https://twitter.com/lynettmaina" target="_blank" className="text-slate-400 hover:text-white transition-colors">
+                        <Link href={personalInfo.socials.twitter} target="_blank" className="text-slate-400 hover:text-white transition-colors">
                             <Twitter className="h-5 w-5" />
                         </Link>
                     </div>

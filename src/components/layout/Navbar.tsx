@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import { Menu, X, Shield, Github, Linkedin, Mail } from "lucide-react";
+import { personalInfo } from "@/data/portfolio";
 
 const navItems = [
     { name: "About", href: "#about" },
@@ -75,13 +76,13 @@ export function Navbar() {
                         </Link>
                     ))}
                     <div className="flex items-center gap-4 ml-4 pl-4 border-l border-white/10">
-                        <Link href="https://github.com/lynettmaina" target="_blank" className="text-slate-400 hover:text-white transition-colors">
+                        <Link href={personalInfo.socials.github} target="_blank" className="text-slate-400 hover:text-white transition-colors">
                             <Github className="h-5 w-5" />
                         </Link>
-                        <Link href="https://linkedin.com/in/lynettmaina" target="_blank" className="text-slate-400 hover:text-white transition-colors">
+                        <Link href={personalInfo.socials.linkedin} target="_blank" className="text-slate-400 hover:text-white transition-colors">
                             <Linkedin className="h-5 w-5" />
                         </Link>
-                        <Button size="sm" onClick={() => window.location.href = "mailto:contact@lynett.dev"}>
+                        <Button size="sm" onClick={() => window.location.href = `mailto:${personalInfo.email}`}>
                             <Mail className="h-4 w-4 mr-2" />
                             Let's Talk
                         </Button>
@@ -112,13 +113,13 @@ export function Navbar() {
                             </Link>
                         ))}
                         <div className="flex items-center gap-4 mt-4 pt-4">
-                            <Link href="https://github.com/lynettmaina" target="_blank" className="text-slate-400 hover:text-white transition-colors">
+                            <Link href={personalInfo.socials.github} target="_blank" className="text-slate-400 hover:text-white transition-colors">
                                 <Github className="h-5 w-5" />
                             </Link>
-                            <Link href="https://linkedin.com/in/lynettmaina" target="_blank" className="text-slate-400 hover:text-white transition-colors">
+                            <Link href={personalInfo.socials.linkedin} target="_blank" className="text-slate-400 hover:text-white transition-colors">
                                 <Linkedin className="h-5 w-5" />
                             </Link>
-                            <Button className="w-full" onClick={() => window.location.href = "mailto:contact@lynett.dev"}>
+                            <Button className="w-full" onClick={() => window.location.href = `mailto:${personalInfo.email}`}>
                                 <Mail className="h-4 w-4 mr-2" />
                                 Let's Talk
                             </Button>
