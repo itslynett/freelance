@@ -24,7 +24,7 @@ export const personalInfo = {
     socials: {
         github: "https://github.com/itslynett",
         linkedin: "https://www.linkedin.com/in/lynett-maina-cybersec/",
-        twitter: "https://twitter.com/lynettmaina"
+        twitter: "https://twitter.com/LynettMaina"
     }
 };
 
@@ -65,14 +65,14 @@ export const experience = [
     {
         role: "Full-Stack Developer",
         company: "SynthaHub",
-        period: "2024 - Present",
+        period: "July 2025 - Present",
         description: "Designing and building secure, scalable software using Next.js, React, and Node.js. Integrating backend systems with FastAPI and Django, managing databases (MongoDB, PostgreSQL), and enforcing security protocols.",
         tags: ["Next.js", "FastAPI", "Security", "PostgreSQL"]
     },
     {
         role: "IT Support & Cybersecurity Intern",
         company: "Royal Media Services",
-        period: "2023 - 2024",
+        period: "Jan 2026 - April 2026",
         description: "Rotated through IT support and cybersecurity departments. Contributed to system reliability, managed Sophos endpoint protection, and supported an interactive CMS used at national scale.",
         tags: ["Cybersecurity", "Sophos", "System Admin", "CMS"]
     }
