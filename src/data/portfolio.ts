@@ -12,14 +12,14 @@ import {
 
 export const personalInfo = {
     name: "Lynett Maina",
-    title: "Cybersecurity Specialist & Full-Stack Developer",
+    title: "Full-Stack Developer & Cybersecurity Enthusiast",
     email: "mainalynett42@gmail.com",
     location: "Nairobi, Kenya",
     bio: [
-        "I am a **Full-Stack Developer** and **Cybersecurity Specialist** based in Nairobi, Kenya. Currently pursuing a Bachelor’s in Information Systems and Technology at USIU–Africa, specializing in Forensics and Cybercrime.",
-        "My philosophy is simple: *\"Functionality without protection is unfinished work.\"*",
-        "I don't just write code; I architect resilient digital ecosystems. From building secure systems at **SynthaHub** to ensuring system reliability at **Royal Media Services**, my work bridges the gap between innovative software and ironclad security.",
-        "When I'm not auditing code or designing APIs, I'm cultivating mental resilience through fitness and continuous learning."
+        "I’m **Lynett Maina**, a **Full-Stack Developer** and **Cybersecurity enthusiast** driven by a love for technology that transforms lives. I’m pursuing a Bachelor’s in Information Systems and Technology at USIU–Africa, specializing in Forensics and Cybercrime, fueling my curiosity for secure systems, digital investigations, and the evolving landscape of cyber threats.",
+        "At **SynthaHub**, I build secure, scalable, and intuitive software, merging creativity with engineering discipline. My work spans frontend frameworks like Next.js, React, and Vue.js, and backend systems with Node.js, Express, Django, FastAPI, and Flask, supported by MongoDB, PostgreSQL, and MySQL. Every line of code I write carries a security-first approach, creating systems that are both functional and purposeful.",
+        "I’m also interning at **Royal Media Services (RMS)**, moving across IT support, cybersecurity, and software development. Some days, I ensure systems run smoothly; on others, I work on cybersecurity with tools like Sophos and Octopus. I also contribute to an interactive CMS, seeing firsthand how technology meets people, content, and scale. Here, I’ve learned that technology isn’t abstract—it’s human. Every alert, interaction, and line of logic traces back to real users, decisions, and impact.",
+        "Fitness, mental wellness, and continuous learning guide my discipline and resilience, shaping how I approach challenges and grow in every space I step into."
     ],
     socials: {
         github: "https://github.com/itslynett",
@@ -30,101 +30,95 @@ export const personalInfo = {
 
 export const services = [
     {
-        icon: Code,
-        title: "Secure Web Development",
-        description: "Building responsive, modern web applications with security best practices baked in from line one."
+        icon: Server,
+        title: "Backend Engineering",
+        description: "Designing scalable, secure, and production-ready APIs using FastAPI, Node.js (Express), and Django."
     },
     {
-        icon: Server,
-        title: "API & Backend Engineering",
-        description: "Designing scalable, RESTful and GraphQL APIs using Node.js, Django, and FastAPI."
+        icon: Database,
+        title: "Database Architecture",
+        description: "Designing schemas and optimizing queries for PostgreSQL, MongoDB, and MySQL to ensure high-throughput performance."
     },
     {
         icon: Shield,
         title: "Security Hardening",
-        description: "Vulnerability assessments, secure coding audits, and implementation of robust auth systems."
+        description: "Implementing secure coding standards, OAuth2/JWT authentication, data validation, and monitoring system vulnerabilities."
     },
     {
         icon: Zap,
-        title: "Performance Optimization",
-        description: "Speeding up load times, optimizing database queries, and ensuring SEO readiness."
+        title: "Performance Tuning",
+        description: "Diagnosing and refactoring performance bottlenecks, optimizing query latency, and introducing pre-aggregation/caching."
     },
     {
-        icon: Smartphone,
-        title: "SaaS & MVP Architecture",
-        description: "Rapidly prototyping and deploying scalable MVPs for startups and businesses."
+        icon: Code,
+        title: "System Integration & DevOps",
+        description: "Containerizing services with Docker, deploying resilient microservices, and setting up monitoring (Prometheus & Grafana)."
     },
     {
         icon: Search,
         title: "Digital Forensics (Consulting)",
-        description: "Leveraging forensic knowledge to investigate and prevent digital threats."
+        description: "Leveraging academic forensics and cybercrime expertise to conduct security audits and prevent digital threats."
     },
 ];
 
 export const experience = [
     {
-        role: "Full-Stack Developer",
+        role: "Software Developer (Part-Time, Remote)",
         company: "SynthaHub",
-        period: "July 2025 - Present",
-        description: "Designing and building secure, scalable software using Next.js, React, and Node.js. Integrating backend systems with FastAPI and Django, managing databases (MongoDB, PostgreSQL), and enforcing security protocols.",
-        tags: ["Next.js", "FastAPI", "Security", "PostgreSQL"]
+        period: "June 2025 - Present",
+        description: "Developed secure backend systems and APIs using Node.js, FastAPI, and Django. Optimized PostgreSQL and MongoDB databases, containerized services using Docker, and implemented monitoring dashboards with Prometheus and Grafana.",
+        tags: ["FastAPI", "Node.js", "PostgreSQL", "Docker", "Prometheus", "Grafana"]
     },
     {
-        role: "IT Support & Cybersecurity Intern",
-        company: "Royal Media Services",
+        role: "IT & Cybersecurity Intern",
+        company: "Royal Media Services (RMS)",
         period: "Jan 2026 - April 2026",
-        description: "Rotated through IT support and cybersecurity departments. Contributed to system reliability, managed Sophos endpoint protection, and supported an interactive CMS used at national scale.",
-        tags: ["Cybersecurity", "Sophos", "System Admin", "CMS"]
+        description: "Optimized a high-scale CMS interaction tracking system by identifying and refactoring O(n^2) bottlenecks, utilizing pre-aggregation and batching. Assisted in designing 'NewsVault' to optimize media storage. Monitored security events using Sophos and managed IT systems infrastructure.",
+        tags: ["Query Optimization", "Sophos", "CMS", "Systems Support", "System Admin"]
     }
 ];
 
 export const projects = [
     {
-        title: "Secure E-Commerce Platform",
-        description: "A full-stack e-commerce application with robust authentication, secure payment gateway integration, and admin dashboard.",
+        title: "Sazara POS System",
+        description: "A production-ready, highly scalable Point of Sale platform. Developed secure backend services and RESTful APIs using FastAPI, designed database schemas, and containerized the entire ecosystem with Docker to support real-world business operations.",
         image: "/images/project-1.svg",
-        tags: ["Next.js", "Node.js", "MongoDB", "Stripe"],
-        links: { demo: "#", github: "#" }
-    },
-    {
-        title: "Cyber Threat Dashboard",
-        description: "Real-time dashboard for monitoring network traffic and potential security threats. Visualizes data using D3.js.",
-        image: "/images/project-2.svg",
-        tags: ["React", "Python", "FastAPI", "D3.js"],
-        links: { demo: "#", github: "#" }
-    },
+        tags: ["FastAPI", "React", "Next.js", "Docker", "REST API"],
+        links: { demo: "https://pos.sazara.co.ke/", github: "https://github.com/itslynett" }
+    }
 ];
 
 export const techStack = [
     {
-        name: "Frontend",
-        skills: ["React", "Next.js", "Vue.js", "TypeScript", "Tailwind CSS", "Redux", "Framer Motion"]
+        name: "Backend Development",
+        skills: ["Node.js", "Express.js", "FastAPI", "Django", "Flask", "RESTful APIs", "Authentication & JWT"]
     },
     {
-        name: "Backend",
-        skills: ["Node.js", "Express", "Django", "FastAPI", "Flask", "Python", "REST APIs"]
+        name: "Databases & Storage",
+        skills: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Prisma", "Query Optimization"]
     },
     {
-        name: "Database",
-        skills: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Prisma"]
+        name: "DevOps & Observability",
+        skills: ["Docker", "Git & GitHub", "Prometheus", "Grafana", "Linux (Ubuntu/Debian)", "CI/CD Concepts"]
     },
     {
-        name: "Security & DevOps",
-        skills: ["Sophos", "Octopus", "OWASP", "Docker", "Git", "Linux", "Penetration Testing"]
+        name: "Security & Systems",
+        skills: ["Secure Coding Practices", "Endpoint Security (Sophos)", "Log Analysis", "Vulnerability awareness"]
     }
 ];
 
 export const philosophy = [
     {
         title: "Discipline & Fitness",
-        description: "Physical resilience fuels mental clarity. The discipline I build in the gym translates to the persistence I bring to debugging and solving complex problems."
+        description: "Physical resilience fuels mental clarity. The discipline I build in the gym translates directly to the persistence I bring to solving complex backend bottlenecks."
     },
     {
         title: "Continuous Learning",
-        description: "Technology never stops evolving, and neither do I. Staying ahead of the curve is not just a passion—it's a professional necessity."
+        description: "Backend architecture and security threats never stop evolving. Staying ahead through continuous learning is a professional necessity."
     },
     {
-        title: "Security Mindset",
-        description: "Security isn't an afterthought; it's a culture. I approach every system with a proactive, defensive mindset."
+        title: "Security by Design",
+        description: "Security is not a checkbox at the end; it is built into the architecture from day one. Functionality without protection is unfinished work."
     }
 ];
+

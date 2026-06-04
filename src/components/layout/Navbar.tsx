@@ -12,7 +12,7 @@ const navItems = [
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
     { name: "Experience", href: "#experience" },
-    { name: "Portfolio", href: "#portfolio" },
+    { name: "Projects", href: "https://sazara.co.ke/team", isExternal: true },
     { name: "Contact", href: "#contact" },
 ];
 
@@ -31,7 +31,11 @@ export function Navbar() {
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
-    const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isExternal?: boolean) => {
+        if (isExternal) {
+            setIsOpen(false);
+            return;
+        }
         e.preventDefault();
         const element = document.querySelector(href);
         if (element) {
@@ -54,7 +58,7 @@ export function Navbar() {
             )}
         >
             <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-                <Link href="/" className="flex items-center gap-2 group">
+                <Link href="/" className="flex items-center gap-2 group flex-shrink-0">
                     <div className="bg-blue-600/20 p-2 rounded-lg group-hover:bg-blue-600/30 transition-colors">
                         <Shield className="h-6 w-6 text-blue-500" />
                     </div>
@@ -64,12 +68,14 @@ export function Navbar() {
                 </Link>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden md:flex items-center gap-8">
+                <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
                     {navItems.map((item) => (
                         <Link
                             key={item.name}
                             href={item.href}
-                            onClick={(e) => scrollToSection(e, item.href)}
+                            target={item.isExternal ? "_blank" : undefined}
+                            rel={item.isExternal ? "noopener noreferrer" : undefined}
+                            onClick={(e) => scrollToSection(e, item.href, item.isExternal)}
                             className="text-sm font-medium text-slate-300 hover:text-blue-400 transition-colors"
                         >
                             {item.name}
@@ -91,7 +97,7 @@ export function Navbar() {
 
                 {/* Mobile Menu Toggle */}
                 <button
-                    className="md:hidden text-slate-300 hover:text-white"
+                    className="lg:hidden text-slate-300 hover:text-white"
                     onClick={toggleMenu}
                 >
                     {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -100,31 +106,44 @@ export function Navbar() {
 
             {/* Mobile Navigation */}
             {isOpen && (
-                <div className="md:hidden absolute top-full left-0 right-0 bg-slate-950 border-b border-white/10 p-4 transition-all">
-                    <nav className="flex flex-col gap-4">
-                        {navItems.map((item) => (
+                <div className="fixed inset-0 z-40 lg:hidden bg-slate-950/98 backdrop-blur-xl flex flex-col justify-between p-8 pt-32 h-screen overflow-y-auto">
+                    {/* Background decorative glows */}
+                    <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+                    <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <nav className="flex flex-col gap-6 text-center my-auto relative z-10">
+                        {navItems.map((item, index) => (
                             <Link
                                 key={item.name}
                                 href={item.href}
-                                onClick={(e) => scrollToSection(e, item.href)}
-                                className="text-base font-medium text-slate-300 hover:text-blue-400 py-2 border-b border-white/5"
+                                target={item.isExternal ? "_blank" : undefined}
+                                rel={item.isExternal ? "noopener noreferrer" : undefined}
+                                onClick={(e) => {
+                                    scrollToSection(e, item.href, item.isExternal);
+                                    if (item.isExternal) setIsOpen(false);
+                                }}
+                                className="text-3xl font-bold text-slate-100 hover:text-blue-400 transition-colors py-2 tracking-wider flex items-center justify-center gap-3 group"
                             >
-                                {item.name}
+                                <span className="text-xs font-mono text-blue-500 opacity-60">0{index + 1}.</span>
+                                <span className="group-hover:translate-x-2 transition-transform duration-300">{item.name}</span>
                             </Link>
                         ))}
-                        <div className="flex items-center gap-4 mt-4 pt-4">
-                            <Link href={personalInfo.socials.github} target="_blank" className="text-slate-400 hover:text-white transition-colors">
-                                <Github className="h-5 w-5" />
-                            </Link>
-                            <Link href={personalInfo.socials.linkedin} target="_blank" className="text-slate-400 hover:text-white transition-colors">
-                                <Linkedin className="h-5 w-5" />
-                            </Link>
-                            <Button className="w-full" onClick={() => window.location.href = `mailto:${personalInfo.email}`}>
-                                <Mail className="h-4 w-4 mr-2" />
-                                Let's Talk
-                            </Button>
-                        </div>
                     </nav>
+
+                    <div className="flex flex-col items-center gap-6 border-t border-white/5 pt-8 relative z-10">
+                        <div className="flex items-center gap-6">
+                            <Link href={personalInfo.socials.github} target="_blank" className="p-3 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-blue-500/50 transition-colors">
+                                <Github className="h-6 w-6" />
+                            </Link>
+                            <Link href={personalInfo.socials.linkedin} target="_blank" className="p-3 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-blue-500/50 transition-colors">
+                                <Linkedin className="h-6 w-6" />
+                            </Link>
+                        </div>
+                        <Button size="lg" className="w-full max-w-sm gap-2" onClick={() => { setIsOpen(false); window.location.href = `mailto:${personalInfo.email}`; }}>
+                            <Mail className="h-5 w-5" />
+                            Let's Talk
+                        </Button>
+                    </div>
                 </div>
             )}
         </header>

@@ -6,6 +6,19 @@ import { motion } from "framer-motion";
 import { personalInfo } from "@/data/portfolio";
 import { Code, Shield, Server } from "lucide-react";
 
+const binaryLines = [
+    "10110111101010001010011011101001111",
+    "01101010001010001100111011001010101",
+    "11001100110010001011110011010010110",
+    "00001110010101001111010101010011101",
+    "10010111011100110101000111010100101",
+    "01101001010111001011011110101001110",
+    "11110000111100001010101010101110011",
+    "01010101010101011111000011110011010",
+    "10101011001100110011001100111010101",
+    "11001100110011001010101111001100101"
+];
+
 export function About() {
     return (
         <Section id="about" className="bg-slate-950/50">
@@ -28,8 +41,8 @@ export function About() {
                             </div>
                             {/* Decorative binary/code lines */}
                             <div className="absolute inset-0 opacity-10 flex flex-col gap-1 p-2 text-[6px] font-mono text-blue-200 overflow-hidden select-none pointer-events-none">
-                                {Array.from({ length: 10 }).map((_, i) => (
-                                    <div key={i}>{Math.random().toString(2).slice(2)}</div>
+                                {binaryLines.map((line, i) => (
+                                    <div key={i}>{line}</div>
                                 ))}
                             </div>
                         </Card>
@@ -71,7 +84,7 @@ export function About() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                    <h2 className="text-3xl font-bold mb-6 text-white"><span className="text-blue-500">About Me.</span> The Digital Guardian.</h2>
+                    <h2 className="text-3xl font-bold mb-6 text-white"><span className="text-blue-500">About Me.</span> Full-Stack Developer & Cybersecurity Enthusiast.</h2>
                     <div className="space-y-4 text-slate-400 leading-relaxed">
                         {personalInfo.bio.map((paragraph, index) => (
                             <p key={index} dangerouslySetInnerHTML={{
