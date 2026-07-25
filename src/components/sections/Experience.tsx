@@ -1,66 +1,92 @@
 "use client";
 
-import { Section } from "@/components/ui/Section";
-import { Card } from "@/components/ui/Card";
 import { motion } from "framer-motion";
-import { Calendar, Briefcase } from "lucide-react";
-import { experience } from "@/data/portfolio";
-import { TiltCard } from "@/components/ui/TiltCard";
+import { Briefcase, Calendar, MapPin, CheckCircle2, Building2 } from "lucide-react";
+import { professionalExperience } from "@/data/portfolio";
 
 export function Experience() {
     return (
-        <Section id="experience" className="bg-slate-950/30">
-            <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Professional <span className="text-blue-500">Experience</span></h2>
-            </div>
+        <section id="experience" className="py-20 border-b border-[#30363D]">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+                {/* Section Header */}
+                <div className="flex flex-col gap-1 mb-12">
+                    <div className="font-mono text-xs text-blue-500 uppercase tracking-wider font-semibold flex items-center gap-2">
+                        <span>06 // WORK HISTORY</span>
+                    </div>
+                    <h2 className="text-3xl sm:text-4xl font-bold text-[#F8FAFC]">Professional Experience</h2>
+                    <p className="mt-1 text-sm text-[#94A3B8]">
+                        Production software engineering, backend architecture, and cybersecurity infrastructure experience.
+                    </p>
+                </div>
 
-            <div className="max-w-3xl mx-auto">
-                <div className="relative border-l border-slate-800 ml-3 md:ml-6 space-y-12">
-                    {experience.map((exp, index) => (
+                {/* Experience Timeline Stream */}
+                <div className="space-y-8 max-w-5xl">
+                    {professionalExperience.map((exp, idx) => (
                         <motion.div
-                            key={index}
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            key={exp.company}
+                            initial={{ opacity: 0, y: 15 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="relative pl-8 md:pl-12"
+                            transition={{ duration: 0.4, delay: idx * 0.1 }}
+                            className="p-6 sm:p-8 rounded bg-[#161B22] border border-[#30363D] relative space-y-6"
                         >
-                            {/* Timeline Dot */}
-                            <div className="absolute -left-[5px] top-2 w-3 h-3 bg-blue-500 rounded-full ring-4 ring-slate-950"></div>
+                            {/* Header Row */}
+                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#30363D]">
+                                <div>
+                                    <span className="font-mono text-xs text-blue-400 font-semibold uppercase tracking-wider block">
+                                        {exp.role}
+                                    </span>
+                                    <h3 className="text-xl sm:text-2xl font-bold text-[#F8FAFC] flex items-center gap-2 mt-1">
+                                        <Building2 className="w-5 h-5 text-cyan-400" />
+                                        <span>{exp.company}</span>
+                                    </h3>
+                                </div>
 
-                            <TiltCard className="h-full">
-                                <Card className="p-6 md:p-8 h-full bg-slate-900/50 border-slate-800">
-                                    <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
-                                        <div>
-                                            <h3 className="text-xl font-bold text-white">{exp.role}</h3>
-                                            <div className="flex items-center text-blue-400 gap-2 mt-1">
-                                                <Briefcase className="w-4 h-4" />
-                                                <span className="font-medium">{exp.company}</span>
-                                            </div>
-                                        </div>
-                                        <div className="flex items-center text-slate-500 text-sm gap-2 bg-slate-900/50 px-3 py-1 rounded-full w-fit">
-                                            <Calendar className="w-3 h-3" />
-                                            <span>{exp.period}</span>
-                                        </div>
+                                <div className="flex items-center gap-4 text-xs font-mono text-[#94A3B8]">
+                                    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#21262D] border border-[#30363D]">
+                                        <Calendar className="w-3.5 h-3.5 text-blue-400" />
+                                        <span>{exp.period}</span>
                                     </div>
-
-                                    <p className="text-slate-400 mb-6 leading-relaxed">
-                                        {exp.description}
-                                    </p>
-
-                                    <div className="flex flex-wrap gap-2">
-                                        {exp.tags.map(tag => (
-                                            <span key={tag} className="text-xs font-medium px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-300 border border-blue-500/10">
-                                                {tag}
-                                            </span>
-                                        ))}
+                                    <div className="hidden sm:flex items-center gap-1.5">
+                                        <MapPin className="w-3.5 h-3.5 text-[#64748B]" />
+                                        <span>{exp.location}</span>
                                     </div>
-                                </Card>
-                            </TiltCard>
+                                </div>
+                            </div>
+
+                            {/* Summary Description */}
+                            <p className="text-sm text-[#E6EDF3] leading-relaxed">
+                                {exp.description}
+                            </p>
+
+                            {/* Key Accomplishments Checklist */}
+                            <div className="space-y-2.5">
+                                <span className="font-mono text-xs text-[#F8FAFC] uppercase font-semibold block">Key Deliverables & Engineering Accomplishments</span>
+                                <ul className="grid gap-2 text-xs sm:text-sm text-[#94A3B8]">
+                                    {exp.responsibilities.map((resp, i) => (
+                                        <li key={i} className="flex items-start gap-2.5">
+                                            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                                            <span className="text-[#E6EDF3] leading-relaxed">{resp}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* Tech Stack Badges */}
+                            <div className="pt-4 border-t border-[#30363D] flex items-center justify-between gap-4 flex-wrap">
+                                <span className="font-mono text-xs text-[#94A3B8]">Core Stack & Tools:</span>
+                                <div className="flex flex-wrap gap-1.5 font-mono text-xs">
+                                    {exp.techStack.map((tech) => (
+                                        <span key={tech} className="px-2.5 py-1 rounded bg-[#21262D] border border-[#30363D] text-[#C9D1D9]">
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
             </div>
-        </Section>
+        </section>
     );
 }

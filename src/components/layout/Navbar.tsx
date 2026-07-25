@@ -2,46 +2,40 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/Button";
-import { Menu, X, Shield, Github, Linkedin, Mail } from "lucide-react";
+import { Menu, X, Shield, Github, Linkedin, FileText, Mail } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
 
 const navItems = [
     { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
+    { name: "Production Products", href: "#production-products" },
+    { name: "Personal Projects", href: "#personal-projects" },
+    { name: "Academic", href: "#academic-projects" },
+    { name: "Skills", href: "#skills" },
     { name: "Experience", href: "#experience" },
-    { name: "Projects", href: "https://sazara.co.ke/team", isExternal: true },
+    { name: "Certifications", href: "#certifications" },
+    { name: "GitHub", href: "#github" },
     { name: "Contact", href: "#contact" },
 ];
 
 export function Navbar() {
     const [isOpen, setIsOpen] = React.useState(false);
     const [isScrolled, setIsScrolled] = React.useState(false);
-    const pathname = usePathname();
 
     React.useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
+            setIsScrolled(window.scrollY > 40);
         };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const toggleMenu = () => setIsOpen(!isOpen);
-
-    const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isExternal?: boolean) => {
-        if (isExternal) {
-            setIsOpen(false);
-            return;
-        }
+    const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         e.preventDefault();
         const element = document.querySelector(href);
         if (element) {
             const offsetTop = element.getBoundingClientRect().top + window.pageYOffset;
             window.scrollTo({
-                top: offsetTop - 80, // Adjust for fixed header
+                top: offsetTop - 75,
                 behavior: "smooth",
             });
             setIsOpen(false);
@@ -50,99 +44,132 @@ export function Navbar() {
 
     return (
         <header
-            className={cn(
-                "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 border-b ${
                 isScrolled
-                    ? "bg-slate-950/80 backdrop-blur-md border-b border-white/5 py-4"
-                    : "bg-transparent py-6"
-            )}
+                    ? "bg-[#0D1117]/95 border-[#30363D] backdrop-blur-sm py-3"
+                    : "bg-[#0D1117]/70 border-transparent py-4"
+            }`}
         >
-            <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-                <Link href="/" className="flex items-center gap-2 group flex-shrink-0">
-                    <div className="bg-blue-600/20 p-2 rounded-lg group-hover:bg-blue-600/30 transition-colors">
-                        <Shield className="h-6 w-6 text-blue-500" />
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+                {/* Brand Logo & Operational Status */}
+                <div className="flex items-center gap-4">
+                    <Link href="#hero" onClick={(e) => scrollToSection(e, "#hero")} className="flex items-center gap-2.5 group">
+                        <div className="w-8 h-8 rounded bg-[#161B22] border border-[#30363D] flex items-center justify-center text-blue-500 group-hover:border-blue-500 transition-colors">
+                            <Shield className="w-4 h-4" />
+                        </div>
+                        <span className="font-mono font-bold text-base text-[#F8FAFC] tracking-tight">
+                            Lynett Maina<span className="text-blue-500">.dev</span>
+                        </span>
+                    </Link>
+
+                    <div className="hidden xl:flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#161B22] border border-[#30363D] text-[11px] font-mono text-[#94A3B8]">
+                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span>Available for Engineering Roles</span>
                     </div>
-                    <span className="font-bold text-xl tracking-tight text-white">
-                        Lynett<span className="text-blue-500">.</span>dev
-                    </span>
-                </Link>
+                </div>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+                <nav className="hidden lg:flex items-center gap-5 xl:gap-6 text-xs font-mono">
                     {navItems.map((item) => (
                         <Link
                             key={item.name}
                             href={item.href}
-                            target={item.isExternal ? "_blank" : undefined}
-                            rel={item.isExternal ? "noopener noreferrer" : undefined}
-                            onClick={(e) => scrollToSection(e, item.href, item.isExternal)}
-                            className="text-sm font-medium text-slate-300 hover:text-blue-400 transition-colors"
+                            onClick={(e) => scrollToSection(e, item.href)}
+                            className="text-[#94A3B8] hover:text-[#F8FAFC] transition-colors"
                         >
                             {item.name}
                         </Link>
                     ))}
-                    <div className="flex items-center gap-4 ml-4 pl-4 border-l border-white/10">
-                        <Link href={personalInfo.socials.github} target="_blank" className="text-slate-400 hover:text-white transition-colors">
-                            <Github className="h-5 w-5" />
-                        </Link>
-                        <Link href={personalInfo.socials.linkedin} target="_blank" className="text-slate-400 hover:text-white transition-colors">
-                            <Linkedin className="h-5 w-5" />
-                        </Link>
-                        <Button size="sm" onClick={() => window.location.href = `mailto:${personalInfo.email}`}>
-                            <Mail className="h-4 w-4 mr-2" />
-                            Let's Talk
-                        </Button>
-                    </div>
                 </nav>
+
+                {/* Desktop Action Icons */}
+                <div className="hidden lg:flex items-center gap-3">
+                    <a
+                        href={personalInfo.socials.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="p-2 rounded bg-[#161B22] border border-[#30363D] text-[#94A3B8] hover:text-[#F8FAFC] hover:border-[#484f58] transition-colors"
+                        aria-label="GitHub Profile"
+                    >
+                        <Github className="w-4 h-4" />
+                    </a>
+                    <a
+                        href={personalInfo.socials.linkedin}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="p-2 rounded bg-[#161B22] border border-[#30363D] text-[#94A3B8] hover:text-[#F8FAFC] hover:border-[#484f58] transition-colors"
+                        aria-label="LinkedIn Profile"
+                    >
+                        <Linkedin className="w-4 h-4" />
+                    </a>
+                    <a
+                        href="#contact"
+                        onClick={(e) => scrollToSection(e, "#contact")}
+                        className="px-3 py-1.5 rounded bg-blue-600 hover:bg-blue-500 text-white font-mono text-xs font-semibold transition-colors flex items-center gap-1.5"
+                    >
+                        <Mail className="w-3.5 h-3.5" />
+                        <span>Contact</span>
+                    </a>
+                </div>
 
                 {/* Mobile Menu Toggle */}
                 <button
-                    className="lg:hidden text-slate-300 hover:text-white"
-                    onClick={toggleMenu}
+                    className="lg:hidden p-2 rounded bg-[#161B22] border border-[#30363D] text-[#94A3B8] hover:text-[#F8FAFC]"
+                    onClick={() => setIsOpen(!isOpen)}
+                    aria-label="Toggle Navigation Menu"
                 >
-                    {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                    {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
                 </button>
             </div>
 
-            {/* Mobile Navigation */}
+            {/* Mobile Navigation Drawer */}
             {isOpen && (
-                <div className="fixed inset-0 z-40 lg:hidden bg-slate-950/98 backdrop-blur-xl flex flex-col justify-between p-8 pt-32 h-screen overflow-y-auto">
-                    {/* Background decorative glows */}
-                    <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
-                    <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div className="lg:hidden fixed inset-x-0 top-[57px] bottom-0 bg-[#0D1117] border-t border-[#30363D] p-6 flex flex-col justify-between overflow-y-auto z-40">
+                    <div className="flex flex-col gap-4 font-mono text-sm">
+                        <div className="flex items-center gap-2 px-3 py-1.5 rounded bg-[#161B22] border border-[#30363D] text-xs text-[#94A3B8] mb-2">
+                            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span>Available for Engineering Roles</span>
+                        </div>
 
-                    <nav className="flex flex-col gap-6 text-center my-auto relative z-10">
-                        {navItems.map((item, index) => (
+                        {navItems.map((item, idx) => (
                             <Link
                                 key={item.name}
                                 href={item.href}
-                                target={item.isExternal ? "_blank" : undefined}
-                                rel={item.isExternal ? "noopener noreferrer" : undefined}
-                                onClick={(e) => {
-                                    scrollToSection(e, item.href, item.isExternal);
-                                    if (item.isExternal) setIsOpen(false);
-                                }}
-                                className="text-3xl font-bold text-slate-100 hover:text-blue-400 transition-colors py-2 tracking-wider flex items-center justify-center gap-3 group"
+                                onClick={(e) => scrollToSection(e, item.href)}
+                                className="py-2.5 border-b border-[#21262D] text-[#F8FAFC] hover:text-blue-400 flex items-center justify-between"
                             >
-                                <span className="text-xs font-mono text-blue-500 opacity-60">0{index + 1}.</span>
-                                <span className="group-hover:translate-x-2 transition-transform duration-300">{item.name}</span>
+                                <span>{item.name}</span>
+                                <span className="text-xs text-[#64748B]">0{idx + 1}</span>
                             </Link>
                         ))}
-                    </nav>
+                    </div>
 
-                    <div className="flex flex-col items-center gap-6 border-t border-white/5 pt-8 relative z-10">
-                        <div className="flex items-center gap-6">
-                            <Link href={personalInfo.socials.github} target="_blank" className="p-3 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-blue-500/50 transition-colors">
-                                <Github className="h-6 w-6" />
-                            </Link>
-                            <Link href={personalInfo.socials.linkedin} target="_blank" className="p-3 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-blue-500/50 transition-colors">
-                                <Linkedin className="h-6 w-6" />
-                            </Link>
+                    <div className="flex flex-col gap-3 pt-6 border-t border-[#30363D]">
+                        <div className="flex items-center justify-center gap-4">
+                            <a
+                                href={personalInfo.socials.github}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="p-3 rounded bg-[#161B22] border border-[#30363D] text-[#94A3B8] hover:text-[#F8FAFC]"
+                            >
+                                <Github className="w-5 h-5" />
+                            </a>
+                            <a
+                                href={personalInfo.socials.linkedin}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="p-3 rounded bg-[#161B22] border border-[#30363D] text-[#94A3B8] hover:text-[#F8FAFC]"
+                            >
+                                <Linkedin className="w-5 h-5" />
+                            </a>
                         </div>
-                        <Button size="lg" className="w-full max-w-sm gap-2" onClick={() => { setIsOpen(false); window.location.href = `mailto:${personalInfo.email}`; }}>
-                            <Mail className="h-5 w-5" />
-                            Let's Talk
-                        </Button>
+                        <a
+                            href="#contact"
+                            onClick={(e) => scrollToSection(e, "#contact")}
+                            className="w-full py-2.5 rounded bg-blue-600 hover:bg-blue-500 text-white font-mono text-xs font-semibold text-center"
+                        >
+                            Contact Me
+                        </a>
                     </div>
                 </div>
             )}

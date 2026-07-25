@@ -1,32 +1,41 @@
+"use client";
+
 import Link from "next/link";
-import { Shield, Github, Linkedin, Twitter } from "lucide-react";
+import { Shield, Github, Linkedin, ArrowUp } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
 
 export function Footer() {
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
     return (
-        <footer className="bg-slate-950 border-t border-white/10 py-12">
-            <div className="container mx-auto px-4 md:px-6">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div className="flex items-center gap-2">
-                        <Shield className="h-6 w-6 text-blue-500" />
-                        <span className="font-bold text-xl text-white">Lynett.dev</span>
+        <footer className="bg-[#0D1117] border-t border-[#30363D] py-12 text-xs font-mono text-[#94A3B8]">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+                {/* Brand & Rights */}
+                <div className="flex items-center gap-3">
+                    <div className="w-7 h-7 rounded bg-[#161B22] border border-[#30363D] flex items-center justify-center text-blue-500">
+                        <Shield className="w-3.5 h-3.5" />
+                    </div>
+                    <div>
+                        <span className="text-[#F8FAFC] font-bold">Lynett Maina</span> © {new Date().getFullYear()} — Handcrafted Engineering Portfolio.
+                    </div>
+                </div>
+
+                {/* Status & Tech Note */}
+                <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2 px-3 py-1 rounded bg-[#161B22] border border-[#30363D] text-[11px]">
+                        <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                        <span>System Status: All Systems Operational</span>
                     </div>
 
-                    <div className="text-slate-400 text-sm">
-                        © {new Date().getFullYear()} Lynett Maina. All rights reserved.
-                    </div>
-
-                    <div className="flex items-center gap-6">
-                        <Link href={personalInfo.socials.github} target="_blank" className="text-slate-400 hover:text-white transition-colors">
-                            <Github className="h-5 w-5" />
-                        </Link>
-                        <Link href={personalInfo.socials.linkedin} target="_blank" className="text-slate-400 hover:text-white transition-colors">
-                            <Linkedin className="h-5 w-5" />
-                        </Link>
-                        <Link href={personalInfo.socials.twitter} target="_blank" className="text-slate-400 hover:text-white transition-colors">
-                            <Twitter className="h-5 w-5" />
-                        </Link>
-                    </div>
+                    <button
+                        onClick={scrollToTop}
+                        className="p-2 rounded bg-[#161B22] border border-[#30363D] text-[#94A3B8] hover:text-[#F8FAFC] hover:border-[#484f58] transition-colors"
+                        aria-label="Scroll to top"
+                    >
+                        <ArrowUp className="w-4 h-4" />
+                    </button>
                 </div>
             </div>
         </footer>
