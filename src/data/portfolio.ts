@@ -13,10 +13,11 @@ export const personalInfo = {
     mission: "I design, build, deploy, and secure production-ready software—from intuitive user interfaces to scalable backend systems and cloud infrastructure. I enjoy solving complex engineering problems while building software that is reliable, maintainable, secure, and built to scale.",
     shortDescription: "Full-stack software engineer with hands-on experience building and scaling production systems across backend and frontend.",
     aboutBio: [
-        "I am a Full-Stack Software Engineer with hands-on experience building and scaling production systems across backend and frontend, from academic full-stack projects since 2023 through professional software development roles at Sazara and Royal Media Services.",
-        "I build secure, well-validated RESTful APIs with FastAPI, Django, and Node.js/Express, and scalable React/Next.js frontends, backed by PostgreSQL and MongoDB database architectures.",
-        "I am part of the core development team at Sazara (sazara.co.ke/team), building live production applications including Sazara POS, Sazara Afya, Elimos, and the School Management System (JCMTC Portal).",
-        "I am comfortable working in fast-paced, globally distributed teams — optimizing database performance, containerizing services with Docker for reliable deployment, and building telemetry dashboards with Prometheus and Grafana. Curious about Web3, blockchain, and emerging technologies, with a strong bias toward ownership, reliability, and continuous learning."
+        "I am a Full-Stack Software Engineer (Backend-Focused) with hands-on experience building and scaling production systems across backend and frontend, spanning academic full-stack projects since 2023 through professional software engineering roles at Sazara and Royal Media Services (RMS).",
+        "I build secure, well-validated RESTful APIs with FastAPI, Django, and Node.js/Express, alongside scalable React/Next.js frontends backed by PostgreSQL and MongoDB databases.",
+        "As part of the software development team at Sazara (sazara.co.ke/team), I contribute to live production applications including Sazara POS System (pos.sazara.co.ke) and Elimos (a Django/React platform in final production rollout), exposing secure APIs, containerizing microservices with Docker, and building Prometheus/Grafana monitoring dashboards.",
+        "At Royal Media Services (RMS), I developed and maintained backend features for News Vault and internal CMS platforms using Laravel (PHP). I diagnosed O(n²) performance bottlenecks in high-scale CMS interaction tracking systems and implemented batching and pre-aggregation strategies that significantly reduced database load and improved production throughput.",
+        "I thrive in fast-paced, globally distributed teams — with a strong bias toward ownership, reliability, database optimization, and continuous learning."
     ],
     phone: "+254 743 288 972",
     email: "mainalynett42@gmail.com",
