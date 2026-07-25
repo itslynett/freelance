@@ -45,7 +45,7 @@ export function About() {
                                 <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
                                 <div>
                                     <span className="text-[#F8FAFC] font-semibold block">DevSecOps Integration</span>
-                                    <span className="text-[#94A3B8]">Automated container security & secret management</span>
+                                    <span className="text-[#94A3B8]">Automated container deployment & CI/CD workflows</span>
                                 </div>
                             </div>
 
@@ -53,15 +53,15 @@ export function About() {
                                 <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                                 <div>
                                     <span className="text-[#F8FAFC] font-semibold block">Database Optimization</span>
-                                    <span className="text-[#94A3B8]">Partitioning, indexing, and Redis caching</span>
+                                    <span className="text-[#94A3B8]">PostgreSQL & MongoDB schema design and query tuning</span>
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-2.5 p-3 rounded bg-[#161B22] border border-[#30363D]">
                                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                                 <div>
-                                    <span className="text-[#F8FAFC] font-semibold block">Digital Forensics</span>
-                                    <span className="text-[#94A3B8]">Investigative mindset & audit log integrity</span>
+                                    <span className="text-[#F8FAFC] font-semibold block">System Telemetry</span>
+                                    <span className="text-[#94A3B8]">Prometheus & Grafana monitoring dashboards</span>
                                 </div>
                             </div>
                         </div>
@@ -82,14 +82,11 @@ export function About() {
                                     <GraduationCap className="w-5 h-5" />
                                 </div>
                                 <div>
-                                    <span className="font-mono text-xs text-blue-400 uppercase tracking-wider block">Higher Education</span>
-                                    <h3 className="font-bold text-[#F8FAFC] text-base">B.Sc Information Systems & Technology</h3>
+                                    <span className="font-mono text-xs text-blue-400 uppercase tracking-wider block">Education</span>
+                                    <h3 className="font-bold text-[#F8FAFC] text-base">Bachelor of Science in Information Systems & Technology</h3>
                                 </div>
                             </div>
                             <p className="text-xs text-[#94A3B8] font-mono">United States International University — Africa (USIU-Africa)</p>
-                            <div className="mt-3 inline-block px-2.5 py-1 rounded bg-[#21262D] border border-[#30363D] text-xs font-mono text-cyan-300">
-                                Specialization: Digital Forensics & Cybercrime
-                            </div>
                         </div>
 
                         {/* Certification Card */}
@@ -100,7 +97,7 @@ export function About() {
                                 </div>
                                 <div>
                                     <span className="font-mono text-xs text-emerald-400 uppercase tracking-wider block">Engineering Certification</span>
-                                    <h3 className="font-bold text-[#F8FAFC] text-base">Certified Web Developer</h3>
+                                    <h3 className="font-bold text-[#F8FAFC] text-base">Software Developer Certificate</h3>
                                 </div>
                             </div>
                             <p className="text-xs text-[#94A3B8] font-mono">PLP Africa (2025)</p>
@@ -115,10 +112,10 @@ export function About() {
                             <div className="flex flex-wrap gap-1.5 font-mono text-xs">
                                 <span className="px-2.5 py-1 rounded bg-[#21262D] text-[#C9D1D9] border border-[#30363D]">Full-Stack Systems</span>
                                 <span className="px-2.5 py-1 rounded bg-[#21262D] text-[#C9D1D9] border border-[#30363D]">Backend Microservices</span>
-                                <span className="px-2.5 py-1 rounded bg-[#21262D] text-[#C9D1D9] border border-[#30363D]">DevSecOps</span>
-                                <span className="px-2.5 py-1 rounded bg-[#21262D] text-[#C9D1D9] border border-[#30363D]">Docker / K8s</span>
-                                <span className="px-2.5 py-1 rounded bg-[#21262D] text-[#C9D1D9] border border-[#30363D]">PostgreSQL</span>
-                                <span className="px-2.5 py-1 rounded bg-[#21262D] text-[#C9D1D9] border border-[#30363D]">Digital Forensics</span>
+                                <span className="px-2.5 py-1 rounded bg-[#21262D] text-[#C9D1D9] border border-[#30363D]">FastAPI / Django</span>
+                                <span className="px-2.5 py-1 rounded bg-[#21262D] text-[#C9D1D9] border border-[#30363D]">Docker / DevOps</span>
+                                <span className="px-2.5 py-1 rounded bg-[#21262D] text-[#C9D1D9] border border-[#30363D]">PostgreSQL / MongoDB</span>
+                                <span className="px-2.5 py-1 rounded bg-[#21262D] text-[#C9D1D9] border border-[#30363D]">Laravel (PHP)</span>
                             </div>
                         </div>
                     </motion.div>

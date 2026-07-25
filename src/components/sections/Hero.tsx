@@ -29,7 +29,7 @@ export function Hero() {
                         className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#161B22] border border-[#30363D] text-xs font-mono text-[#94A3B8] mb-6"
                     >
                         <Terminal className="w-3.5 h-3.5 text-blue-500" />
-                        <span>System Engineer & DevSecOps Specialist</span>
+                        <span>Full-Stack Software Engineer (Backend-Focused)</span>
                     </motion.div>
 
                     {/* Main Headline */}
@@ -54,8 +54,6 @@ export function Hero() {
                         <span>Backend Engineer</span>
                         <span className="text-[#484f58] hidden sm:inline">•</span>
                         <span>DevSecOps Engineer</span>
-                        <span className="text-[#484f58] hidden sm:inline">•</span>
-                        <span>Cybersecurity</span>
                     </motion.div>
 
                     {/* Tagline */}
@@ -99,6 +97,7 @@ export function Hero() {
 
                         <a
                             href={personalInfo.socials.resume}
+                            download="Lynett_Maina_Software_Engineer_CV.pdf"
                             target="_blank"
                             rel="noreferrer"
                             className="px-6 py-3 rounded bg-[#161B22] hover:bg-[#21262D] text-[#F8FAFC] border border-[#30363D] hover:border-[#484f58] font-mono text-sm font-semibold transition-colors flex items-center gap-2"
@@ -142,7 +141,7 @@ export function Hero() {
                         </div>
                         <div>
                             <div className="font-mono text-xs text-[#94A3B8] uppercase">Infrastructure</div>
-                            <div className="text-sm font-bold text-[#F8FAFC] font-mono">Docker / Linux / K8s</div>
+                            <div className="text-sm font-bold text-[#F8FAFC] font-mono">Docker / Linux / CI/CD</div>
                         </div>
                     </div>
 
@@ -152,7 +151,7 @@ export function Hero() {
                         </div>
                         <div>
                             <div className="font-mono text-xs text-[#94A3B8] uppercase">Data Persistence</div>
-                            <div className="text-sm font-bold text-[#F8FAFC] font-mono">PostgreSQL / Redis</div>
+                            <div className="text-sm font-bold text-[#F8FAFC] font-mono">PostgreSQL / MongoDB</div>
                         </div>
                     </div>
 
@@ -161,8 +160,8 @@ export function Hero() {
                             <ShieldCheck className="w-5 h-5" />
                         </div>
                         <div>
-                            <div className="font-mono text-xs text-[#94A3B8] uppercase">Security Standard</div>
-                            <div className="text-sm font-bold text-[#F8FAFC] font-mono">DevSecOps / RBAC</div>
+                            <div className="font-mono text-xs text-[#94A3B8] uppercase">Telemetry</div>
+                            <div className="text-sm font-bold text-[#F8FAFC] font-mono">Prometheus / Grafana</div>
                         </div>
                     </div>
                 </motion.div>

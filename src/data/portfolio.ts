@@ -6,16 +6,16 @@ export const personalInfo = {
         "Full-Stack Software Engineer (Backend-Focused)",
         "Backend Engineer",
         "DevSecOps Engineer",
-        "Cybersecurity"
+        "Software Developer"
     ],
     primaryTitle: "Full-Stack Software Engineer (Backend-Focused)",
     tagline: "Building secure, scalable applications and cloud-native infrastructure.",
     mission: "I design, build, deploy, and secure production-ready software—from intuitive user interfaces to scalable backend systems and cloud infrastructure. I enjoy solving complex engineering problems while building software that is reliable, maintainable, secure, and built to scale.",
     shortDescription: "Full-stack software engineer with hands-on experience building and scaling production systems across backend and frontend.",
     aboutBio: [
-        "I am a Full-Stack Software Engineer with hands-on experience building and scaling production systems across backend and frontend, from academic full-stack projects since 2023 through professional software development roles at Synthahub and Royal Media Services.",
+        "I am a Full-Stack Software Engineer with hands-on experience building and scaling production systems across backend and frontend, from academic full-stack projects since 2023 through professional software development roles at Sazara and Royal Media Services.",
         "I build secure, well-validated RESTful APIs with FastAPI, Django, and Node.js/Express, and scalable React/Next.js frontends, backed by PostgreSQL and MongoDB database architectures.",
-        "I am part of the development team behind Sazara (a live production Point-of-Sale system), Elimos (a Django/React platform in final production rollout), and the School Management System (JCMTC Portal).",
+        "I am part of the core development team at Sazara (sazara.co.ke/team), building live production applications including Sazara POS, Sazara Afya, Elimos, and the School Management System (JCMTC Portal).",
         "I am comfortable working in fast-paced, globally distributed teams — optimizing database performance, containerizing services with Docker for reliable deployment, and building telemetry dashboards with Prometheus and Grafana. Curious about Web3, blockchain, and emerging technologies, with a strong bias toward ownership, reliability, and continuous learning."
     ],
     phone: "+254 743 288 972",
@@ -25,7 +25,7 @@ export const personalInfo = {
         github: "https://github.com/itslynett",
         linkedin: "https://www.linkedin.com/in/lynettmaina-cybersec",
         twitter: "https://twitter.com/LynettMaina",
-        resume: "https://github.com/itslynett"
+        resume: "/resume.pdf"
     }
 };
 
@@ -107,17 +107,18 @@ export const productionProducts: ProductionProduct[] = [
     },
     {
         id: "elimos",
-        name: "Elimos (Synthahub)",
+        name: "Elimos (Sazara Platform)",
+        url: "https://sazara.co.ke/team",
         status: "In Development",
         roles: ["Full-Stack Developer", "Backend Engineer"],
         responsibilities: [
             "Django backend API development",
             "React frontend integration",
-            "Contract engagement delivery",
+            "Sazara team development",
             "Database query optimization",
             "API documentation & validation"
         ],
-        overview: "A Django and React educational management platform built under contract with Synthahub, currently in final stages of production rollout.",
+        overview: "A Django and React educational management platform built as part of the Sazara engineering team (sazara.co.ke/team), currently in final stages of production rollout.",
         businessProblem: "Need for a unified digital platform to handle course distribution, student assignments, and administrative metrics.",
         architectureDiagram: "React Frontend App ──> Django REST API Core ──> PostgreSQL DB ──> Celery Task Queue ──> Docker Infrastructure",
         engineeringDecisions: [
@@ -250,7 +251,7 @@ export const academicProjects: AcademicProject[] = [
     {
         id: "policy-guard-ai-academic",
         name: "PolicyGuard AI — Security Rule Enforcer",
-        institution: "USIU-Africa (Digital Forensics & Security)",
+        institution: "USIU-Africa",
         overview: "Automated cybersecurity policy inspection tool built to parse software configurations and enforce compliance standards.",
         systemDesign: "Python rule engine combining static policy checks with AI security analysis.",
         techStack: ["Python", "FastAPI", "AI Integration", "Docker", "Linux"],
@@ -271,10 +272,11 @@ export const technicalSkills = {
 export const professionalExperience = [
     {
         role: "Software Developer (Part-Time, Remote)",
-        company: "Synthahub",
-        location: "Nairobi, Kenya (Contract)",
+        company: "Sazara",
+        companyUrl: "https://sazara.co.ke/team",
+        location: "Nairobi, Kenya",
         period: "Jan 2025 – Present",
-        description: "Built and maintained backend services and RESTful APIs, optimized database performance, containerized applications with Docker, and implemented system monitoring.",
+        description: "Software Developer on the Sazara engineering team (sazara.co.ke/team), building secure backend services, RESTful APIs, optimizing database performance, containerizing applications with Docker, and setting up system telemetry.",
         responsibilities: [
             "Built and maintained backend services with Python (FastAPI, Django) and Node.js, exposing secure, well-validated RESTful APIs consumed by frontend clients.",
             "Optimized PostgreSQL and MongoDB queries and schema design for performance, scalability, and reliability.",

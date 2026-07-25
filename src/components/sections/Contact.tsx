@@ -51,7 +51,7 @@ export function Contact() {
                             <div>
                                 <h3 className="text-xl font-bold text-[#F8FAFC] mb-2">Let's Connect</h3>
                                 <p className="text-xs text-[#94A3B8] leading-relaxed">
-                                    Whether you are looking to hire a Full-Stack / Backend Engineer or discuss cloud-native security, I am available to connect.
+                                    Whether you are looking to hire a Full-Stack / Backend Engineer or discuss cloud-native architecture, I am available to connect.
                                 </p>
                             </div>
 
@@ -82,7 +82,7 @@ export function Contact() {
                                     </div>
                                     <div>
                                         <span className="text-[#94A3B8] block text-[10px] uppercase">LinkedIn Profile</span>
-                                        <span className="text-[#F8FAFC] font-semibold text-xs">linkedin.com/in/lynett-maina-cybersec</span>
+                                        <span className="text-[#F8FAFC] font-semibold text-xs">linkedin.com/in/lynettmaina-cybersec</span>
                                     </div>
                                 </a>
 
@@ -105,6 +105,7 @@ export function Contact() {
                                 {/* Resume */}
                                 <a
                                     href={personalInfo.socials.resume}
+                                    download="Lynett_Maina_Software_Engineer_CV.pdf"
                                     target="_blank"
                                     rel="noreferrer"
                                     className="p-3.5 rounded bg-[#0D1117] border border-[#30363D] hover:border-blue-500/50 transition-colors flex items-center gap-3 group"
